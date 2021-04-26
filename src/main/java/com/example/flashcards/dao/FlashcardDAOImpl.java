@@ -63,4 +63,13 @@ public class FlashcardDAOImpl implements FlashcardDAO{
         }
         return randoms;
     }
+
+    @Override
+    public List<Flashcard> getUserCards(int theId) {
+        Session currentSession = entityManager.unwrap(Session.class);
+        Query<Flashcard> theQuery = currentSession.createQuery("from Flashcard where user_id=:userId",Flashcard.class);
+        theQuery.setParameter("userId",theId);
+        List<Flashcard> flashcards = theQuery.getResultList();
+        return flashcards;
+    }
 }

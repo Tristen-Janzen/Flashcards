@@ -42,4 +42,9 @@ public class FlashcardServiceImpl implements FlashcardService{
     public List<Flashcard> getRandom() {
         return flashcardDAO.getRandom();
     }
+
+    @Override
+    public List<Flashcard> getUserCards(int theId) {
+        return flashcardDAO.getUserCards(theId);
+    }
 }

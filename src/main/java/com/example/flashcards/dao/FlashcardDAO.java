@@ -10,4 +10,5 @@ public interface FlashcardDAO {
     public void save(Flashcard theFlashcard);
     public void deleteById(int theId);
     public List<Flashcard> getRandom();
+    public List<Flashcard> getUserCards(int theId);
 }

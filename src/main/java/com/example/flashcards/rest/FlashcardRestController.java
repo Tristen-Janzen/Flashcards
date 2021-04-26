@@ -32,6 +32,11 @@ public class FlashcardRestController {
     @GetMapping("/flashcards/random")
     public List<Flashcard> getRandom(){return flashcardService.getRandom();}
 
+    @GetMapping("/flashcards/user/{userId}")
+    public List<Flashcard> getUserCards(@PathVariable int userId){
+        return flashcardService.getUserCards(userId);
+    }
+
     @PostMapping("/flashcards/create/{userId}")
     public Flashcard addFlashcard(@PathVariable int userId,@RequestBody Flashcard theFlashcard){
         theFlashcard.setId(0);
