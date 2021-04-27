@@ -38,11 +38,6 @@ export default class ViewCardsComponent extends Component {
         return (
             <div className ="container">
                 <FlashCardsList flashcards = {this.state.flashcards}/>
-                <h1>
-                    Hello World
-                </h1>
-               <button  onClick = {this.showData}>Click</button>
-                
             </div>
         )
     }
