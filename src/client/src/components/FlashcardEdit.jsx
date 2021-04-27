@@ -28,7 +28,7 @@ class FlashcardEdit extends Component {
         }
 
         FlashCardsService.updateCard(card)
-            .then(() => this.props.history.push('/'))
+            .then(() => this.props.history.push({pathname:'/manage', state:this.state.user_id}))
     }
 
     render() {

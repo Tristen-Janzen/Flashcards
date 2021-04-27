@@ -13,7 +13,7 @@ class RouterComponent extends Component {
             <Router>
                     <Switch>
                         <Route exact path="/"><App/></Route>
-                        <Route exact path="/manage"><Manage/></Route>
+                        <Route exact path="/manage"><Manage to={{state:{user_id:1}}}/></Route>
                         <Route exact path="/view"><ViewCardsComponent/></Route>
                         <Route exact path="/flashcards/edit/:id" component={FlashcardEdit} />
                         <Route exact path="/flashcards/create/:id" component={FlashcardCreate} />

@@ -26,7 +26,7 @@ class Manage extends Component {
     }
 
     refereshCards() {
-        FlashCardsService.retrieveUserCards(1)
+        FlashCardsService.retrieveUserCards(this.props.location.state.user_id)
         .then(
             response => {
                 this.setState({

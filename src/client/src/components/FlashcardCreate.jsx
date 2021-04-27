@@ -27,7 +27,7 @@ class FlashcardCreate extends Component {
             user_id: this.props.match.params.id
         }
         FlashCardsService.createCard(card)
-            .then(() => this.props.history.push('/'))
+            .then(() => this.props.history.push({pathname:'/manage',state: this.state.user_id}))
     }
 
     render() {
