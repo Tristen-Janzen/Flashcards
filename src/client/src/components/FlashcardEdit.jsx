@@ -1,7 +1,7 @@
 import React, { Component, useState } from 'react';
 import { Input, Button, Radio} from 'antd';
 import { Formik, Form, Field } from 'formik';
-import DataService from '../service/DataService';
+import FlashCardsService from '../services/FlashCardsService';
 import '../antd.css';
 
 
@@ -27,7 +27,7 @@ class FlashcardEdit extends Component {
             user_id: this.props.location.state.user_id
         }
 
-            DataService.updateCard(card)
+        FlashCardsService.updateCard(card)
             .then(() => this.props.history.push('/'))
     }
 

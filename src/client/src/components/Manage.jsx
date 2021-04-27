@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import {Route, withRouter} from 'react-router-dom';
-import {Table, Space, Popconfirm,Button} from 'antd';
-import DataService from '../service/DataService';
+import { withRouter} from 'react-router-dom';
+import {Table, Popconfirm,Button} from 'antd';
+import FlashCardsService from '../services/FlashCardsService';
 import '../antd.css';
 
 const{Column} = Table;
@@ -26,7 +26,7 @@ class Manage extends Component {
     }
 
     refereshCards() {
-        DataService.retrieveUserCards(1)
+        FlashCardsService.retrieveUserCards(1)
         .then(
             response => {
                 this.setState({
@@ -38,7 +38,7 @@ class Manage extends Component {
 
     deleteCardClicked(id) {
         console.log('Delete Card Clicked')
-        DataService.deleteCard(id)
+        FlashCardsService.deleteCard(id)
         .then(
             response => {
                 this.setState({message: `Deleted Card: ${id}`})
@@ -56,7 +56,7 @@ class Manage extends Component {
 
     addCardClicked() {
         console.log('Add Card Clicked')
-        this.props.history.push(`/flashcards/create/1`)
+        this.props.history.push(`/flashcards/create/${this.props.location.state.user_id}`)
     }
  
    render() {
@@ -79,49 +79,6 @@ class Manage extends Component {
                             <a>Delete</a>
                             </Popconfirm>                        )}
                         />
-                   
-                   
-                   {/*<table className="table">
-                       <thead>
-                           <tr style={{textAlign: "center" , color: "black"}}>
-                               <th>Id</th>
-                               <th>Product Name</th>
-                               <th>Price</th>
-                               <th>Image</th>
-                               <th>Details</th>
-                               <th>Stock</th>
-                               <th>Preferred Stock</th>
-                               <th>Ordered</th>
-                               <th>Delete</th>
-                               <th>Update</th>
-                           </tr>
-                       </thead>
-                       <tbody>
-                           {
-                               this.state.flashcards.map (
-                                   flashcards => 
-                                   <tr style={{textAlign: "center"}} key={flashcards.id}>
-                                       <td>{flashcards.id}</td>
-                                       <td>{flashcards.product_name}</td>
-                                       <td>{flashcards.price}</td>
-                                       <img src={flashcards.image_url} alt="description" class="image"></img>
-                                       <td>{flashcards.details}</td>
-                                       <td>{flashcards.stock}</td>
-                                       <td>{flashcards.preferred_stock}</td>
-                                       <td>{flashcards.ordered}</td>
-                                       <td><button className="btn btn-warning" onClick={() => this.deleteProductClicked(flashcards.id, flashcards.product_name, flashcards.price)}>Delete</button></td>
-                                       <td><button className="btn btn-success" onClick={() => this.upDateProductClicked(flashcards.id, flashcards.product_name)}>Update</button></td>
-                                   </tr>
-                               )
-                           }
-                       </tbody>
-                        </table>*/}
-                   {/*<div className="row">
-                       <br/>
-                       <button className="btn btn-success" onClick={() => {this.addProductClicked()}}>Add Product</button>
-                    </div>*/}
-               {/*</div>
-               </div>*/}
                </Table>
                <div>
                <Button type="primary" onClick={() => this.addCardClicked()}>Add</Button>               </div>
