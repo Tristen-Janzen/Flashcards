@@ -1,5 +1,5 @@
 import React from "react";
-import studyImg from "../../study-logo.svg";
+import studyImg from "../study-logo.svg";
 
 
 

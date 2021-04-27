@@ -3,8 +3,8 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import FlashcardCreate from './FlashcardCreate'
 import FlashcardEdit from './FlashcardEdit'
 import Manage from './Manage'
-import Login from './src/components/login/login.jsx'
-import ViewCardsComponent from './src/components/ViewCardsComponent.jsx'
+import App from './App.jsx'
+import ViewCardsComponent from './ViewCardsComponent.jsx'
 
 class RouterComponent extends Component {
    render() {
@@ -12,7 +12,7 @@ class RouterComponent extends Component {
            <div>
             <Router>
                     <Switch>
-                        <Route exact path="/"><Login/></Route>
+                        <Route exact path="/"><App/></Route>
                         <Route exact path="/manage"><Manage/></Route>
                         <Route exact path="/view"><ViewCardsComponent/></Route>
                         <Route exact path="/flashcards/edit/:id" component={FlashcardEdit} />
