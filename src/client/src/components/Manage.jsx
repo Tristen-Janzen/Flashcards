@@ -26,7 +26,7 @@ class Manage extends Component {
     }
 
     refereshCards() {
-        FlashCardsService.retrieveUserCards(this.props.location.state.user_id)
+        FlashCardsService.retrieveUserCards(this.props.location.state)
         .then(
             response => {
                 this.setState({
@@ -56,7 +56,7 @@ class Manage extends Component {
 
     addCardClicked() {
         console.log('Add Card Clicked')
-        this.props.history.push(`/flashcards/create/${this.props.location.state.user_id}`)
+        this.props.history.push(`/flashcards/create/${this.props.location.state}`)
     }
  
    render() {

@@ -93,3 +93,14 @@ body{
   gap: 1rem;
   grid-template-columns: repeat(auto-fill, minmax(200px,1fr));
 }
+
+
+.choicePage{
+  display: flex;
+  justify-content:center;
+  align-items:center;
+  position:absolute;
+  top:50%;
+  left:50%;
+  right:50%;
+}
