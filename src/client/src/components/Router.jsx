@@ -13,8 +13,14 @@ import {AppstoreOutlined} from '@ant-design/icons';
 const { SubMenu } = Menu;
 
 class RouterComponent extends Component {
-    handleClick(){
-        window.location.href = "http://localhost:3000/logout";
+      handleClick = e => {
+        console.log(e);
+        if(e.key==5){
+            window.location.href = "http://localhost:3000/logout";
+        }
+        if(e.key==6){
+            window.location.href = "http://localhost:3000/choice";
+        }
       };
    render() {
        let record = 1;
@@ -28,6 +34,7 @@ class RouterComponent extends Component {
 
 <SubMenu key="sub1" icon={<AppstoreOutlined />} title="Profile">
           <Menu.Item key="5">Logout</Menu.Item>
+          <Menu.Item key="6">Choice</Menu.Item>
  </SubMenu>
 
 

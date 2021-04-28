@@ -1,8 +1,9 @@
 import React, { Component,useState } from 'react'
 import FlashCardsService from '../services/FlashCardsService';
+import { withRouter} from 'react-router-dom';
 import FlashCardsList from './FlashCardsList';
 
-export default class ViewCardsComponent extends Component {
+class ViewCardsComponent extends Component {
     constructor(props){
         super(props)
         this.state ={
@@ -14,13 +15,13 @@ export default class ViewCardsComponent extends Component {
     }
 
     componentDidMount(){
-        this.refreshCardsList(1)
+        this.refreshCardsList(this.props.location.state)
         //console.log(this.state.flashcards)
         
     }
 
     refreshCardsList(id){
-        FlashCardsService.retrieveAllCards(id)
+        FlashCardsService.retrieveAllCards(this.props.location.state)
         .then(
             resp =>{
                 this.setState({
@@ -42,3 +43,5 @@ export default class ViewCardsComponent extends Component {
         )
     }
 }
+
+export default withRouter(ViewCardsComponent)
