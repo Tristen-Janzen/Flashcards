@@ -31,9 +31,9 @@ class Choice extends Component {
        return(
             <div className="choicePage">
                 <Space size={100} >
-               <Button type="primary" size="large" onClick={() => this.onClickView(this.state.user_id)}>View</Button>
+               <Button type="primary" size="large" onClick={() => this.onClickView(this.state.user_id)}>Study Flashcards  </Button>
                
-               <Button type="primary" size="large" onClick={() => this.onClickManage(this.state.user_id)} >Manage</Button>
+               <Button type="primary" size="large" onClick={() => this.onClickManage(this.state.user_id)} >Manage Flashcards</Button>
                </Space>
             </div>
        )

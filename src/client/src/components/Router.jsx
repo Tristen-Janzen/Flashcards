@@ -34,7 +34,7 @@ class RouterComponent extends Component {
 
 <SubMenu key="sub1" icon={<AppstoreOutlined />} title="Profile">
           <Menu.Item key="5">Logout</Menu.Item>
-          <Menu.Item key="6">Choice</Menu.Item>
+          <Menu.Item key="6">Menu</Menu.Item>
  </SubMenu>
 
 
